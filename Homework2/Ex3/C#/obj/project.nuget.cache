@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "OVClS4SXx9dIq12N81sAUVOrsUf5aZwOCRi3Nx5vD8U0phGNTliQRFUMWj5MH16KdoTJrhh1vVfx+0uLXSnk7A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\natna\\Desktop\\Statistics 23-24\\Homework2\\Ex3\\C#\\Hmw2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\natna\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\natna\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\natna\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\natna\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

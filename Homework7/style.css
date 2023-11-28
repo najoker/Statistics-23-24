@@ -1,0 +1,74 @@
+body {
+  background-color: #DEB5B5;
+  color: #190482;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+input {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #190482;
+}
+
+select {
+  width: 30%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #190482;
+  font-size: 20px;
+}
+
+button {
+  background-color: #0074d9;
+  width: 90%;
+  color: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px 0;
+}
+
+button:hover {
+  background-color: #0056a7;
+}
+
+/* Canvas style */
+.canvasWrapper {
+  width: 100%;
+  resize: both;
+  overflow: auto;
+  border: 1px solid lightgray;
+}
+
+#canvas1,
+#canvas2 {
+  width: 55%;
+  margin: 10px;
+  height: auto;
+  position: absolute;
+  display: none;
+  background-color: #93AD71;
+}
+
+/* Form inputs */
+.input-form label,
+.input-form input,
+.input-form button {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#container-graph {
+  margin: 20px;
+}

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+
+
+    <script>
+
+        class Graph {
+
+            constructor(canvas, rectSize, graphSettings, label) {
+
+                this.canvas = canvas;
+
+                this.context = this.canvas.getContext("2d");
+
+
+
+                this.isResizing = false;
+
+                this.isFlipped = false;
+
+                this.isDragging = false;
+
+                this.offsetDragX = 0;
+
+                this.offsetDragY = 0;
+
+
+
+                this.rect = rectSize
+
+
+
+                this.label = label;
+
+
+
+                this.canvas.addEventListener("mousedown", this.mousedown_Handler.bind(this));   //myCanvas.onmousedown = (e) => mousedown_Handler(e);
+
+                this.canvas.addEventListener("mousemove", this.mousemove_Handler.bind(this));   //myCanvas.onmousemove = (e) => mousemove_Handler(e);
+
+                this.canvas.addEventListener("mouseup", this.mouseup_Handler.bind(this));       //myCanvas.onmouseup = (e) => mouseup_Handler(e);
+
+
+
+                //Space where the mouse can resize each graph (down-right corner of each graph)
+
+                this.resizeHandleSize = 15;
+
+
+
+                //{ probability: prob, nSystems: nSys, nAttacks: nAtks };
+
+
+
+                this.nSys = graphSettings['nSystems'];
+
+                this.nAtk = graphSettings['nAttacks'];
+
+                this.probability = graphSettings['probability'];
+
+
+
+                this.type = graphSettings['type'];
+
+            }
+
+
+
+            //Draws the graph (rectangle shape) + draws space which handles the resize aspect
+
+            draw() {
+
+                //clear canvas
+
+                this.context.clearRect(this.rect.x, this.rect.y, this.rect.width, this.rect.height);
+
+
+
+                //Background color
+
+                this.context.fillStyle = "rgba(255,255,255, 0.9)";
+
+
+
+                if (this.isFlipped) { this.context.fillRect(this.canvas.width - this.rect.x - this.rect.width, this.rect.y, this.rect.width, this.rect.height); }
+
+
+
+                else { this.context.fillRect(this.rect.x, this.rect.y, this.rect.width, this.rect.height); }
+
+
+
+                this.resizeHandle();
+
+            }
+
+
+
+            clear() { this.context.clearRect(this.rect.x, this.rect.y, this.rect.width, this.rect.height); }
+
+
+
+            drawInside() { this.draw() }
+
+
+
+
+
+            //The mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
+
+            //Handles mouse down event for resizing and dragging the rectangle.
+
+            mousedown_Handler(event) {
+
+
+
+                //let shiftX = event.clientX - ball.getBoundingClientRect().left;
+
+                //let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+                const shiftX = event.clientX - this.canvas.getBoundingClientRect().left;
+
+                const shiftY = event.clientY - this.canvas.getBoundingClientRect().top;
+
+
+
+                const resizeHandleX = this.rect.x + this.rect.width - this.resizeHandleSize;
+
+                const resizeHandleY = this.rect.y + this.rect.height - this.resizeHandleSize;
+
+
+
+                if (
+
+                    shiftX >= resizeHandleX &&
+
+                    shiftX <= resizeHandleX + this.resizeHandleSize &&
+
+                    shiftY >= resizeHandleY &&
+
+                    shiftY <= resizeHandleY + this.resizeHandleSize
+
+                ) {
+
+                    this.isResizing = true;
+
+                } else if (
+
+                    shiftX >= this.rect.x &&
+
+                    shiftX <= this.rect.x + this.rect.width &&
+
+                    shiftY >= this.rect.y &&
+
+                    shiftY <= this.rect.y + this.rect.height
+
+                ) {
+
+                    this.isDragging = true;
+
+                    this.offsetDragX = shiftX - this.rect.x;
+
+                    this.offsetDragY = shiftY - this.rect.y;
+
+                }
+
+            }
+
+
+
+            //The mousemove event is fired at an element when a pointing device(usually a mouse) is moved while the cursor's hotspot is inside it.
+
+            //Handles mouse move event for resizing and dragging the rectangle.
+
+            mousemove_Handler(event) {
+
+                const shiftX = event.clientX - this.canvas.getBoundingClientRect().left;
+
+                const shiftY = event.clientY - this.canvas.getBoundingClientRect().top;
+
+                if (this.isResizing) {
+
+                    this.rect.width = shiftX - this.rect.x;
+
+                    this.rect.height = shiftY - this.rect.y;
+
+                    this.draw();
+
+
+
+                } else if (this.isDragging) {
+
+                    this.rect.x = shiftX - this.offsetDragX;
+
+                    this.rect.y = shiftY - this.offsetDragY;
+
+                    this.draw();
+
+
+
+                }
+
+            }
+
+
+
+            //The mouseup event is fired at an Element when a button on a pointing device is released while the pointer is located inside it.
+
+            //Handles mouse up event and resets resizing and dragging flags.
+
+            mouseup_Handler() {
+
+                clearTimeout(this.refreshIntervalId)
+
+                this.isResizing = false;
+
+                this.isDragging = false;
+
+            }
+
+
+
+            resizeHandle() {
+
+                const x = this.rect.x + this.rect.width - this.resizeHandleSize;
+
+                const y = this.rect.y + this.rect.height - this.resizeHandleSize;
+
+                this.context.fillStyle = "green";
+
+                //this.context.globalAlpha = 0.1; // Transparency
+
+                this.context.fillRect(x, y, this.resizeHandleSize, this.resizeHandleSize);
+
+            }
+
+
+
+            //Sets the attacks for the graph.
+
+            setAttacks(attacks) { this.attacks = attacks }
+
+
+
+            //Draws a label on the graph.
+
+            drawLabel(text) {
+
+                this.context.strokeStyle = "black";
+
+                this.context.fillText(text, (this.rect.x), (this.rect.y));
+
+            }
+
+
+
+            //Draws vertical lines on the graph based on the number of columns.
+
+            drawColumns(numberOfColumns) {
+
+                const space = this.rect.width / (numberOfColumns - 1);
+
+                for (let i = 1; i <= numberOfColumns; i++) {
+
+                    this.context.strokeStyle = "gray";
+
+                    this.context.beginPath();
+
+                    this.context.moveTo((this.rect.x + (i - 1) * space), this.rect.y);
+
+                    this.context.lineTo((this.rect.x + (i - 1) * space), (this.rect.height + this.rect.y));
+
+                    this.context.stroke();
+
+                    this.context.fillText(((i)), (this.rect.x + (i - 1) * space), (this.rect.height + this.rect.y));
+
+                }
+
+            }
+
+
+
+            drawXAxis() {
+
+                this.context.strokeStyle = "white";
+
+                this.context.lineWidth = 1
+
+                this.context.beginPath();
+
+                this.context.moveTo(this.rect.x, (this.rect.y) + this.rect.height / 2);
+
+                this.context.lineTo((this.rect.width + this.rect.x), (this.rect.y) + this.rect.height / 2);
+
+                this.context.stroke();
+
+            }
+
+
+
+
+
+            createHistogram(part, exactPoint) {
+
+                this.context.globalAlpha = 0.2; //Transparency
+
+
+
+                //Extract the final scores of the systems
+
+                const scores = this.attacks.map(system => system[0][part]);
+
+
+
+                //Find the minimum and maximum score
+
+                const minScore = Math.min(...scores);
+
+                const maxScore = Math.max(...scores);
+
+
+
+                //Define the number of desired intervals and their width (bars)
+
+                const numIntervals = Math.max(Math.ceil(this.attacks.length / 10), 5);
+
+                const intervalWidth = (maxScore - minScore) / numIntervals;
+
+
+
+                //Create an array to know how may points fall in each interval
+
+                const intervalCounts = new Array(numIntervals).fill(0);
+
+
+
+                //Find the maximum count to normalize the bar heights
+
+                scores.forEach(score => {
+
+                    const intervalIndex = Math.min(Math.floor((score - minScore) / intervalWidth), numIntervals - 1);
+
+                    intervalCounts[intervalIndex]++;
+
+                });
+
+
+
+                //Find the maximum count to normalize the bar heights
+
+                const maxCount = Math.max(...intervalCounts);
+
+
+
+                //Find the length of each bar
+
+                const barWidth = this.rect.height / numIntervals;
+
+                const barH = this.rect.width / 5;
+
+
+
+                //Draw barrs
+
+                for (let i = 0; i < numIntervals; i++) {
+
+                    const y = this.rect.y + i * barWidth;
+
+                    const barHeight = (intervalCounts[i] / maxCount) * barH;
+
+                    const x = this.rect.x + exactPoint - barHeight;
+
+
+
+                    this.context.fillStyle = "lightorange";
+
+                    this.context.strokeStyle = "black";
+
+                    this.context.fillRect(x, y, barHeight, barWidth);
+
+                }
+
+                this.context.globalAlpha = 1
+
+            }
+
+
+
+            //Draws the entire graph
+
+            drawInside() {
+
+                this.draw();
+
+                this.drawLabel(this.label);
+
+                this.drawColumns(this.nAtk);
+
+                this.drawXAxis();
+
+
+
+                for (let i = 0; i < this.attacks.length; i++) {
+
+                    //First analysis on the histogram: half
+
+                    this.attacks[i][0]["half"] = this.getTypeFrequency(this.attacks[i]);
+
+                    //Second analysis on the histogram: end
+
+                    this.attacks[i][0]["end"] = this.getTypeFrequency(this.attacks[i]);
+
+                }
+
+                this.createHistogram("half", this.rect.width / 2);
+
+                this.createHistogram("end", this.rect.width);
+
+            }
+
+
+
+            //Draws graph based on the type
+
+            getTypeFrequency(arrAttack) {
+
+                let x = 0;
+
+                let y = 0; //score
+
+                this.context.strokeStyle = arrAttack[0]["color"]
+
+                let nAtks = arrAttack.length - 1
+
+                let xAxis = this.rect.x
+
+                let yAxis = this.rect.y + this.rect.height / 2
+
+                for (let i = arrAttack.length; i > 0; i--) {
+
+                    this.context.beginPath();
+
+                    if (this.type === "N")
+
+                        this.context.lineTo(xAxis + x, yAxis + (this.rect.height / 15 / nAtks) * y);
+
+                    else
+
+                        this.context.moveTo(xAxis + x, yAxis + (this.rect.height / 3 / nAtks) * y);
+
+
+
+                    if (!arrAttack[i]) {
+
+                        if (this.type === "S") y--
+
+                    } else {
+
+                        if (this.type === "R") y += (arrAttack.length - i) / ((arrAttack.length - i));
+
+
+
+                        else if (this.type === "N") { y += (arrAttack.length - i) / Math.sqrt((arrAttack.length - i)); }
+
+                        else y++
+
+                    }
+
+                    x = (arrAttack.length - i) * (this.rect.width / (nAtks));
+
+                    if (this.type === "N")
+
+                        this.context.lineTo(xAxis + x, yAxis + (this.rect.height / 15 / nAtks) * y);
+
+
+
+                    else
+
+                        this.context.lineTo(xAxis + x, yAxis + (this.rect.height / 3 / nAtks) * y);
+
+                    this.context.stroke();
+
+                }
+
+                return y
+
+            }
+
+        }
+
+    </script>
+
+
+
+    <script>
+
+        //Generates attacks sequence
+
+
+
+        class AttackSequence {
+
+
+
+            constructor(graphSettings) {
+
+                this.nSys = graphSettings['nSystems'];          //Number of systems
+
+                this.nAtk = graphSettings['nAttacks'];          //Number of attacks
+
+                this.prob = graphSettings['probability'];       //Probability of attacks
+
+
+
+                this.type = graphSettings['type'];              //Type of attack monitoring
+
+
+
+                this.attacks = this.buildAttacks();               //Attacks generated based on input
+
+            }
+
+
+
+            buildAttacks() {
+
+                const attacks = [];
+
+
+
+                function getRandomColor() {
+
+                    var letters = '0123456789ABCDEF';
+
+                    var color = '#';
+
+                    for (var i = 0; i < 6; i++) {
+
+                        color += letters[Math.floor(Math.random() * 16)];
+
+                    }
+
+                    return color;
+
+                }
+
+
+
+                for (let i = 0; i < this.nSys; i++) {
+
+                    const row = [];
+
+                    row.push({ color: getRandomColor(), final: 0 })
+
+                    for (let j = 0; j < this.nAtk; j++) {
+
+                        //true or false based on probability of attacks
+
+                        row.push(Math.random() <= this.prob);
+
+                    }
+
+                    attacks.push(row);
+
+                }
+
+                return attacks;
+
+            }
+
+
+
+            getAttacks() { return this.attacks; }
+
+        }
+
+    </script>
+
+
+
+    <script>
+
+        
+
+        class CanvasRefresher {
+
+
+
+            constructor(canvas) {
+
+                this.canvas = document.getElementById(canvas);
+
+                this.context = this.canvas.getContext("2d");
+
+                this.objects = [];
+
+
+
+                this.refreshIntervalId = 0;
+
+                this.canvas.addEventListener("mousedown", this.mousedown_Handler.bind(this));
+
+                this.canvas.addEventListener("mouseup", this.mouseup_Handler.bind(this));
+
+            }
+
+
+
+            mousedown_Handler(event) { this.refreshIntervalId = setInterval(this.draw.bind(this), 30); } //FPS (30)
+
+
+
+            mouseup_Handler(event) { clearInterval(this.refreshIntervalId); this.draw() }
+
+
+
+            //Adds graphs to canvas
+
+            addObjects(objList) { objList.forEach((obj) => { this.objects.push(obj) }); this.draw(); }
+
+
+
+            flushObjects() { this.objects = [] }
+
+
+
+            //Clears the canvas and redraws all graphs.
+
+            draw() { this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); this.objects.forEach((obj) => { obj.drawInside() }); }
+
+
+
+            //Clears the canvas only
+
+            clear() { this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); }
+
+        }
+
+    </script>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+    <canvas style="border: 5px solid white;" id="canvas" width="2000" height="1000"></canvas>
+
+
+
+    
+
+    Systems to simulate:<input type="number" id="nSys" min="1" value="100" />
+
+
+    Attacks to simulate:<input type="number" id="nAtks" min="10" value="10" />
+
+<br>
+
+    Probability of successful attack:<input id="prob" type="number" min="0" max="1" value="0.5">
+
+
+
+    <button onclick="start()">Simulate</button>
+
+
+
+    <script>
+
+
+
+        const app = new CanvasRefresher("canvas");
+
+
+
+        function start() {
+
+            app.clear();
+
+            app.flushObjects();
+
+
+
+            //Values chosen by user
+
+            const nSys = parseInt(document.getElementById("nSys").value);
+
+            const nAtks = parseInt(document.getElementById("nAtks").value);
+
+            const prob = parseFloat(document.getElementById("prob").value);
+
+            const adversary = new AttackSequence({ nSystems: nSys, nAttacks: nAtks, probability: prob });
+
+            const attacks = adversary.getAttacks();
+
+
+
+            //(canvas, rectSize, label, graphSettings)
+
+            var graph1 = new Graph(app.canvas, { width: 600, height: 400, x: 50, y: 30 }, { nSystems: nSys, nAttacks: nAtks, probability: prob, type: "S" }, "Security Score Penetration");
+
+            var graph2 = new Graph(app.canvas, { width: 600, height: 400, x: 700, y: 30 }, { nSystems: nSys, nAttacks: nAtks, probability: prob, type: "A" }, "Absolute Frequency Penetration");
+
+            var graph3 = new Graph(app.canvas, { width: 600, height: 400, x: 50, y: 450 }, { nSystems: nSys, nAttacks: nAtks, probability: prob, type: "R" }, "Relative Frequency Penetration");
+
+            var graph4 = new Graph(app.canvas, { width: 600, height: 400, x: 700, y: 450 }, { nSystems: nSys, nAttacks: nAtks, probability: prob, type: "N" }, "Normalized Frequency Penetration");
+
+
+
+            graph1.setAttacks(attacks);
+
+            graph2.setAttacks(attacks);
+
+            graph3.setAttacks(attacks);
+
+            graph4.setAttacks(attacks);
+
+
+
+            app.addObjects([graph1, graph2, graph3, graph4]);
+
+        }
+
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,28 @@
+C:\Users\giorg\source\repos\Hmw2\Hmw2\bin\Debug\net6.0\Hmw2.exe
+C:\Users\giorg\source\repos\Hmw2\Hmw2\bin\Debug\net6.0\Hmw2.deps.json
+C:\Users\giorg\source\repos\Hmw2\Hmw2\bin\Debug\net6.0\Hmw2.runtimeconfig.json
+C:\Users\giorg\source\repos\Hmw2\Hmw2\bin\Debug\net6.0\Hmw2.dll
+C:\Users\giorg\source\repos\Hmw2\Hmw2\bin\Debug\net6.0\Hmw2.pdb
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.AssemblyInfoInputs.cache
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.AssemblyInfo.cs
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.csproj.CoreCompileInputs.cache
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.dll
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\refint\Hmw2.dll
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.pdb
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\Hmw2.genruntimeconfig.cache
+C:\Users\giorg\source\repos\Hmw2\Hmw2\obj\Debug\net6.0\ref\Hmw2.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\bin\Debug\net6.0\Hmw2.exe
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\bin\Debug\net6.0\Hmw2.deps.json
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\bin\Debug\net6.0\Hmw2.runtimeconfig.json
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\bin\Debug\net6.0\Hmw2.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\bin\Debug\net6.0\Hmw2.pdb
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.AssemblyInfoInputs.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.AssemblyInfo.cs
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.csproj.CoreCompileInputs.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\refint\Hmw2.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.pdb
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\Hmw2.genruntimeconfig.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex3\C#\obj\Debug\net6.0\ref\Hmw2.dll

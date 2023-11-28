@@ -1,0 +1,14 @@
+C:\Users\natna\Desktop\mrpro\Homework1\bin\Debug\net8.0-windows\Homework1.exe
+C:\Users\natna\Desktop\mrpro\Homework1\bin\Debug\net8.0-windows\Homework1.deps.json
+C:\Users\natna\Desktop\mrpro\Homework1\bin\Debug\net8.0-windows\Homework1.runtimeconfig.json
+C:\Users\natna\Desktop\mrpro\Homework1\bin\Debug\net8.0-windows\Homework1.dll
+C:\Users\natna\Desktop\mrpro\Homework1\bin\Debug\net8.0-windows\Homework1.pdb
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.AssemblyInfoInputs.cache
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.AssemblyInfo.cs
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.csproj.CoreCompileInputs.cache
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.dll
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\refint\Homework1.dll
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.pdb
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\Homework1.genruntimeconfig.cache
+C:\Users\natna\Desktop\mrpro\Homework1\obj\Debug\net8.0-windows\ref\Homework1.dll

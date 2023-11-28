@@ -1,0 +1,42 @@
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\bin\Debug\net6.0\hmw2ex1.exe
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\bin\Debug\net6.0\hmw2ex1.deps.json
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\bin\Debug\net6.0\hmw2ex1.runtimeconfig.json
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\bin\Debug\net6.0\hmw2ex1.dll
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\bin\Debug\net6.0\hmw2ex1.pdb
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.AssemblyInfoInputs.cache
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.AssemblyInfo.cs
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.csproj.CoreCompileInputs.cache
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.dll
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\refint\hmw2ex1.dll
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.pdb
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\hmw2ex1.genruntimeconfig.cache
+C:\Users\giorg\source\repos\hmw2ex1\hmw2ex1\obj\Debug\net6.0\ref\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\bin\Debug\net6.0\hmw2ex1.exe
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\bin\Debug\net6.0\hmw2ex1.deps.json
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\bin\Debug\net6.0\hmw2ex1.runtimeconfig.json
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\bin\Debug\net6.0\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\bin\Debug\net6.0\hmw2ex1.pdb
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.AssemblyInfoInputs.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.AssemblyInfo.cs
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.csproj.CoreCompileInputs.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\refint\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.pdb
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\hmw2ex1.genruntimeconfig.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\hmw2ex1\obj\Debug\net6.0\ref\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\bin\Debug\net6.0\hmw2ex1.exe
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\bin\Debug\net6.0\hmw2ex1.deps.json
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\bin\Debug\net6.0\hmw2ex1.runtimeconfig.json
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\bin\Debug\net6.0\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\bin\Debug\net6.0\hmw2ex1.pdb
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.AssemblyInfoInputs.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.AssemblyInfo.cs
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.csproj.CoreCompileInputs.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\refint\hmw2ex1.dll
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.pdb
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\hmw2ex1.genruntimeconfig.cache
+C:\Users\natna\Desktop\Statistics 23-24\Homework2\Ex1\C#\obj\Debug\net6.0\ref\hmw2ex1.dll

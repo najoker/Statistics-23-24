@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+
+    <script>
+        // Get a reference to the canvas
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Line
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 4;
+
+        var lineX1 = canvas.width * 3 / 4;
+        var lineY1 = canvas.height / 4;
+        var lineX2 = canvas.width * 3 / 4;
+        var lineY2 = canvas.height * 3 / 4;
+
+        ctx.beginPath();
+        ctx.moveTo(lineX1, lineY1);
+        ctx.lineTo(lineX2, lineY2);
+        ctx.stroke();
+
+        // Point
+        ctx.fillStyle = "blue";
+
+        var pointX = canvas.width / 4;
+        var pointY = canvas.height / 4 + 50; 
+
+        ctx.beginPath();
+        ctx.arc(pointX, pointY, 2, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Circle
+        ctx.fillStyle = "yellow";
+
+        var centerX = canvas.width / 4;
+        var centerY = canvas.height / 2 + 50; 
+        var circleRadius = 60;
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, circleRadius, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Rectangle
+        ctx.fillStyle = "brown";
+
+        var rectX = canvas.width / 2;
+        var rectY = canvas.height / 4 +50;
+        var rectWidth = 80;
+        var rectHeight = 60;
+
+        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+    </script>
+</body>
+</html>
